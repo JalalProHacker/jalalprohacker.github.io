@@ -1,0 +1,2785 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Baller XI</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div>
+	<p id="adjective"></p>
+	<div class="football" onclick="addClick()">
+	</div>
+	<div class="scores">
+		<button class="teambutton" onclick="showteam()">🏆 MARKET</button>
+		<p>Click the ball or press the spacebar</p>
+		<br>
+		<h1><span id="currency">0</span> Coins</h1>
+		<h2><span id="clicks">0</span> Clicks</h2>
+	</div>
+</div>
+<div class="players-list">
+	<div class="header">
+		<h1>Packed</h1>
+		<p>All gold players you have packed, <br>including sold players.</p>
+	</div>
+	<div>
+		<div class="inner" id="innerity">
+			<div class="unnecessity">
+				<svg class="unnecessary" viewBox="0 0 640 512" width="100" title="crown">
+					<path d="M528 448H112c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm64-320c-26.5 0-48 21.5-48 48 0 7.1 1.6 13.7 4.4 19.8L476 239.2c-15.4 9.2-35.3 4-44.2-11.6L350.3 85C361 76.2 368 63 368 48c0-26.5-21.5-48-48-48s-48 21.5-48 48c0 15 7 28.2 17.7 37l-81.5 142.6c-8.9 15.6-28.9 20.8-44.2 11.6l-72.3-43.4c2.7-6 4.4-12.7 4.4-19.8 0-26.5-21.5-48-48-48S0 149.5 0 176s21.5 48 48 48c2.6 0 5.2-.4 7.7-.8L128 416h384l72.3-192.8c2.5.4 5.1.8 7.7.8 26.5 0 48-21.5 48-48s-21.5-48-48-48z" />
+				</svg>
+				<p class="unnecessary">"Just charge it"<br><span>Tobi Ehindero</span></p>
+			</div>
+		</div>
+		<div class="levels">
+			<h1>NOOB</h1>
+			<p>LEVEL <span id="levelno">1</span></p>
+		</div>
+	</div>
+</div>
+<div class="teamsheet">
+	<div class="scouts">
+		<div class="coinbar">
+			<button class="backbutton" onclick="hideteam()">⬅</button>
+			<div class="others">
+				<button class="averagebutton" style="display: none;">🏅 <span id="averagedata">00</span></button>
+				<button class="coinbutton">🪙 <span id="internalcurrency">45,000</span></button>
+			</div>
+		</div>
+		<div class="silver" onclick="buySilver()">
+			<img src="https://www.footyrenders.com/render/jose-mourinho-5-316x540.png" alt="">
+			<div>
+				<h1><span>1K</span>Jose Mourinho</h1>
+				<p>Can only get players below 85 rating. Checks top 15 leagues both in Europe and out. Has decades of experience.</p>
+			</div>
+		</div>
+		<div class="gold" onclick="buyGold()">
+			<img src="https://pbs.twimg.com/media/FqJgPQBWABQf0_i.png" alt="">
+			<div>
+				<h1><span>1.5K</span>Doctor Alkhatib</h1>
+				<p>Finds players rated over 85. Checks all leagues intrenationally. Uses Giga Chad knowledge and experience.</p>
+			</div>
+		</div>
+	</div>
+	<div class="playerlist">
+		<h1>My Players</h1>
+		<p>Create your dream XI from scratch!</p>
+		<div class="players">
+		</div>
+	</div>
+</div>
+<div class="achievement">
+	<h1>Achievement Unlocked!</h1>
+	<h2>Your Family Left You</h2>
+</div>
+<div class="picker">
+	<h1>Pick a football</h1>
+	<p>You can choose your balls the way you like them</p>
+	<div class="balls">
+		<button class="ball1" onclick="ballone()"></button>
+		<button class="ball2" onclick="balltwo()"></button>
+		<button class="ball3" onclick="ballthree()"></button><br>
+		<button class="ball4" onclick="ballfour()"></button>
+		<button class="ball5" onclick="ballfive()"></button>
+		<button class="ball6" onclick="ballsix()"></button>
+	</div>
+</div>
+<button class="openpicker" onclick="showpicker()">
+	<svg viewBox="0 0 512 512" width="100" title="pen">
+		<path d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z" />
+	</svg>
+</button>
+<div class="manager">
+	<div id="container"></div>
+	<div class="containeroutermost">
+		<div class="extinfo">
+			<header>
+				<h1 contenteditable="true" onkeypress="return (this.innerText.length <= 20)">president name</h1>
+				<h2>Level <span class="levelnoto">1</span></h2>
+			</header>
+			<main>
+				<p>Whether you support Klopp who lets Trent's inner monkey unleash or Guardiola who unleashed Haaland's inner monkey, this is where you can unleash your inner monkey by lining up your players and becoming one of the best teams out there.</p>
+			</main>
+		</div>
+		<div class="manscout" onclick="buyCoach()">
+			<img src="https://i.pinimg.com/originals/6e/7c/1e/6e7c1e4bafd996c00e50c1d19c47de01.png" alt="">
+			<div>
+				<h1><span>5K</span> Find Manager</h1>
+				<p>A good manager can increase your newly scouted players' ratings by multiple points.</p>
+			</div>
+		</div>
+		<div class="extinfo additional">
+			<header>
+				<h1 id="coachname">no manager</h1>
+				<h2>Boost: <span class="boostno">0</span></h2>
+			</header>
+			<main>
+				<p id="description">
+					A manager is crucial for a football team as they provide strategic direction, tactical guidance, effective leadership, and foster team spirit, ultimately shaping the team's success and achievements.</p>
+			</main>
+		</div>
+	</div>
+</div>
+<div class="backbuttonmanager" onclick="document.querySelector('.manager').style.left = '-100%'; this.style.left = '-50%'; document.querySelector('.opentheteamsheet').style.opacity = '1'; document.querySelector('.openbanner').style.display = 'block'">
+	BACK
+</div>
+<button class="opentheteamsheet" onclick="document.querySelector('.manager').style.left = '0'; document.querySelector('.backbuttonmanager').style.left = '20px'; this.style.opacity = '0'; document.querySelector('.openbanner').style.display = 'none'">🥇 TEAMSHEET</button>
+<div class="loading-container">
+  <h1>BALLER'S XI</h1>
+  <div class="cube-wrapper">
+    <div class="cube-folding">
+      <span class="leaf1"></span>
+      <span class="leaf2"></span>
+      <span class="leaf3"></span>
+      <span class="leaf4"></span>
+    </div>
+    <span class="loading" data-name="Loading">Loading</span>
+  </div>
+</div>
+  <button class="openbanner" onclick="document.querySelector('.updateBanner').style.left = '50%'; document.querySelector('.darkness').style.zIndex = '200'; document.querySelector('.darkness').style.opacity = '1'"><span>3.0</span></button>
+<img src="banner.png" class="updateBanner" onclick="this.style.left = '-200%'; document.querySelector('.darkness').style.zIndex = '-111'; document.querySelector('.darkness').style.opacity = '0'">
+<div class="darkness"></div>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Shantell+Sans:wght@300&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+html,body{
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	display: flex;
+	place-items: center;
+	justify-content: space-evenly;
+	background-size: cover;
+	background-position: center;
+}
+.opentheteamsheet{
+	height: 60px;
+	width: 200px;
+	background-color: green;
+	border-radius: 15px 0px 0px 0px;
+	border: 0;
+	color: white;
+	font-size: 1.3em;
+	cursor: pointer;
+	font-family: poppins;
+	font-weight: 700;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	transition: 0.4s;
+}
+.teambutton{
+	height: 60px;
+	width: 200px;
+	background-color: green;
+	border-radius:0px 15px 0px 0px;
+	border: 0;
+	color: white;
+	font-size: 1.3em;
+	cursor: pointer;
+	font-family: poppins;
+	font-weight: 700;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.players-list .header h1{
+	margin: 0px;
+	font-size: 3em;
+	font-family: poppins;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.players-list .header p{
+	font-family: poppins;
+	font-weight: 200;
+}
+.players-list .header{
+	background-color: green;
+	box-sizing: border-box;
+	padding: 20px;
+	border-radius: 20px 20px 0px 0px;
+	color: white;
+	font-family: montserrat;
+	text-align: center;
+}
+.players-list .inner{
+	border-radius: 0px 0px 20px 20px;
+	box-shadow: 0 0 20px rgba(0,0,0,.4);
+	min-height: 40px;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 10px;
+	max-height: 40vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	transition: 1s;
+}
+.players-list .inner button{
+	height: 35px;
+	width: 35px;
+	border-radius: 35px;
+	font-weight: 900;
+	border: 0;
+	box-shadow: 0 0 10px rgba(0,0,0,.7);
+	background-color: green;
+	color: white;
+	font-family: poppins;
+	display: flex;
+	cursor: pointer;
+	justify-content: center;
+	place-items: center;
+}
+.players-list .inner::-webkit-scrollbar {
+	display: none;
+}
+
+.achievement{
+	padding: 10px;
+	height: 70px;
+	background-color: green;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 20px;
+	left: -100%;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 0 0 15px rgba(0,0,0,.4);
+	flex-direction: column;
+	transition: 1s;
+}
+.achievement h1{
+	font-family: poppins;
+	text-transform: uppercase;
+	color: white;
+	margin: 0;
+	font-size: 1em;
+}
+.achievement h2{
+	margin: 0;
+	color: white;
+	font-family: montserrat;
+	padding: 0;
+}
+
+svg.unnecessary{
+	opacity: .4;
+	width: 50px;
+}
+#adjective{
+	font-family: luckiest guy;
+	color: yellow;
+	text-shadow: 0 0 15px yellow;
+	position: absolute;
+	transition: 0.1s opacity;
+	cursor: crosshair;
+	z-index: -2;
+	mix-blend-mode: difference;
+	-webkit-user-select: none; /* Safari */ 
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+
+}
+
+.picker{
+	background-color: white;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	place-items: center;
+	flex-direction: column;
+	position: absolute;
+	right: -100%;
+	transition: 1s;
+}
+.picker .balls{
+	margin-top: 30px;
+}
+.picker .balls button{
+	margin: 15px;
+	cursor: pointer;
+	transition: 0.4s;
+}
+.balls button:hover{
+	transform: rotate(20deg);
+}
+.picker h1{
+	font-family: poppins;
+	margin: 0;
+	font-size: 3em;
+}
+.picker p{
+	font-family: poppins;
+}
+.picker button{
+	height: 150px;
+	width: 150px;
+	border-radius: 150px;
+	border: 0;
+	background-size: cover;
+	background-position: center;
+	box-shadow: 0 0 15px rgba(0,0,0,.5);
+}
+.ball1{
+	background-image: url(https://www.pngkit.com/png/full/75-753251_adidas-fifa-world-cup-top-replique-football-russia.png);
+}
+.ball2{
+	background-image: url(https://www.pngfind.com/pngs/b/424-4248125_ball-bola-sepakbola-football-champions-league-ball-2018.png);
+}
+.ball3{
+	background-image: url(https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Sport-PNG/Euro_Cup_2016_France_Ball_PNG_Transparent_Clip_Art_Image.png?m=1461812102);
+}
+.ball4{
+	background-image: url(https://www.pngarts.com/files/3/Nike-Football-PNG-Image-Background.png);
+}
+.ball5{
+	background-image: url(https://cdn.shopify.com/s/files/1/0314/1055/2965/products/CU8053-100-PHSFZ001-2000_1200x1200.png?v=1625048937);
+}
+.ball6{
+	background-image: url(https://www.pngarts.com/files/3/Adidas-Football-Download-Transparent-PNG-Image.png);
+}
+
+.playerinner{
+	display: flex;
+	justify-content: space-evenly;
+	font-family: montserrat;
+	font-size: 0.7em;
+	place-items: center;
+	color: darkgreen;
+	padding: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,.3);
+	border-radius: 15px;
+	margin-bottom: 5px;
+	box-sizing: border-box;
+	transition: 0.4s;
+}
+.playerinner:hover{
+	cursor: pointer;
+	transform: scale(1.05, 1.05);
+	background-color: green;
+	color: white;
+	box-shadow: 0 0 40px rgba(0,0,0,.7);
+}
+
+.levels{
+	border-radius: 20px;
+	box-sizing: border-box;
+	padding: 10px;
+	background-color: darkgreen;
+	margin-top: 20px;
+	color: white;
+	box-shadow: 0 0 20px rgba(0,0,0,.4);
+	text-align: center;
+}
+.levels h1, .levels p{
+	font-family: poppins;
+	margin: 0;
+}
+p.unnecessary{
+	opacity: .4;
+	font-family: poppins;
+	font-weight: 700;
+	margin: 5px;
+	line-height: 1.3em;
+}
+p.unnecessary span{
+	margin: 0;
+	text-transform: uppercase;
+	opacity: .3
+}
+
+.football{
+	height: 49.5vw;
+	width: 50vw;
+	max-width: 400px;
+	max-height: 390px;
+	background: url(https://www.pngkit.com/png/full/75-753251_adidas-fifa-world-cup-top-replique-football-russia.png);
+	background-size: 100%;
+	background-position: center;
+	box-shadow: 0 0 30px rgba(0,0,0,.4);
+	border-radius: 50%;
+	transition: 0.2s;
+	cursor: crosshair;
+}
+.football:active{
+	transform: scale(0.97, 0.97);
+}
+.football:hover{
+	box-shadow: 0 0 50px rgba(0,0,0,.4);
+}
+.scores{
+	width: 100%;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	padding-top: 30px;
+}
+.scores h1, h2{
+	margin: 0;
+}
+.scores h1{
+	font-family: oswald;
+	color: darkgreen;
+	text-shadow: 0 0 45px green;
+	text-transform: uppercase;
+	font-size: 3em;
+}
+.scores p{
+	font-family: tilt warp;
+}
+.scores h2{
+	font-family: shantell sans;
+	text-transform: uppercase;
+	color: green;
+	opacity: .6;
+}
+
+.teamsheet{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: white;
+	top: -120%;
+	transition: 0.7s;
+}
+.scouts .coinbar{
+	grid-column-start: span 2;
+	display: flex;
+	place-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 15px;
+}
+.scouts .coinbar button{
+	height: 50px;
+}
+.scouts .coinbar .backbutton{
+	cursor: pointer;
+	height: 50px;
+	width: 50px;
+	border-radius: 10px;
+	border: 0;
+	background-color: white;
+	font-size: 1.5em;
+	box-shadow: 0 0 20px rgba(0,0,0,.4), inset 0 0 10px rgba(0,0,0,.3);
+	transition: 0.2s;
+}
+.scouts .coinbar .backbutton:hover{
+	transform: scale(1.1, 1.1);
+}
+.scouts .coinbar .coinbutton{
+	cursor: pointer;
+	border-radius: 10px;
+	border: 0;
+	background-color: white;
+	font-size: 1em;
+	font-family: montserrat;
+	padding: 0 10px;
+	box-shadow: 0 0 20px rgba(0,0,0,.4);
+}
+.scouts .coinbar .averagebutton{
+	cursor: pointer;
+	border-radius: 10px;
+	border: 0;
+	background-color: white;
+	font-size: 1em;
+	font-family: montserrat;
+	padding: 0 10px;
+	box-shadow: 0 0 20px rgba(0,0,0,.4);
+}
+.teamsheet{
+	overflow-y: hidden;
+}
+.scouts{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 50px 29vh;
+	box-sizing: border-box;
+	padding: 10px;
+	gap: 10px;
+}
+.scouts .gold, .silver{
+	background-size: 200%;
+	box-shadow: 0 0 25px rgba(0,0,0,.4);
+	color: white;
+	max-width: 47vw;
+	box-sizing: border-box;
+	padding: 10px 10px 0px 10px;
+	border-radius: 20px;
+	display: flex;
+	justify-content: space-evenly;
+	place-items: flex-end;
+	font-family: poppins;
+	transition: 0.1s;
+}
+.scouts .gold div, .scouts .silver div{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.scouts svg{
+	fill: white;
+	max-height: 1em;
+	margin: 0;
+	padding: 0;
+}
+.scouts .silver{
+	background-image: linear-gradient(45deg, green, darkgreen, green, darkgreen, green, darkgreen);
+}
+.scouts .gold img, .silver img{
+	height: 90%;
+}
+.scouts .gold{
+	background-image: linear-gradient(45deg, orangered, tomato, orangered, tomato, orangered, tomato);
+}
+.scouts .gold p{
+}
+.scouts .gold h1 span{
+	color: orangered;
+}
+.scouts h1 span{
+	background-color: white;
+	color: green;
+	width: 2em;
+	height: 2em;
+	padding: 0px 4px 0px 4px;
+	border-radius: 10px;
+	margin-right: 10px;
+}
+.scouts .gold p, .silver p{
+	text-align: justify;
+	width: 95%;
+	font-family: montserrat;
+}
+.scouts .gold h1, .silver h1{
+	margin: 0;
+	text-transform: uppercase;
+}
+.scouts div .text h1{
+	margin: 0;
+	font-size: 3em;
+}
+.scouts .gold:hover, .silver:hover{
+	transform: scale(1.03, 1.03);
+	cursor: pointer;
+	background-size: 100%;
+}
+.scouts .gold:active, .silver:active{
+	transform: scale(1, 1);
+}
+.playerlist{
+	box-sizing: border-box;
+	width: 100%;
+	height: 70vh;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding-bottom: 200px;
+	box-shadow: inset 0 0 15px rgba(0,0,0,.3);
+}
+.playerlist h1{
+	text-align: center;
+	font-family: luckiest guy;
+	font-size: 3em;
+	color: green;
+	margin-bottom: 0;
+}
+.playerlist p{
+	font-family: montserrat;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.players{
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 1fr 1fr 1fr;
+	box-sizing: border-box;
+	padding: 10px;
+}
+.players .player{
+	background-image: url(https://cdn.britannica.com/35/238335-050-2CB2EB8A/Lionel-Messi-Argentina-Netherlands-World-Cup-Qatar-2022.jpg);
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: column;
+	place-items: end;
+	border-radius: 10px;
+	transition: 0.5s;
+	height: 300px;
+	box-shadow: 0 0 20px rgba(0,0,0,.8), inset 0 0 15px rgba(0,0,0,0);
+}
+.players .player:hover .content{
+	background: white;
+	cursor: default;
+	color: black;
+}
+.players .player:hover{
+	box-shadow: 0 0 40px rgba(0,0,0,.8), inset 0 0 15px rgba(0,0,0,.4);
+}
+.players .player:hover .content .rating h1{
+	color: black;
+}
+.players .player .content{
+	background: rgba(0,0,0,.5);
+	cursor: default;
+	color: white;
+	width: 100%;
+	margin-top: auto;
+	display: flex;
+	flex-direction: row;
+	place-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding: 10px;
+	transition: 0.4s;
+}
+.players .player .content h1, h2, h3, p{
+	margin: 0;
+}
+.players .player .content .name{
+	display: flex;
+	flex-direction: column;
+	font-family: montserrat;
+	box-sizing: border-box;
+}
+.players .player .content .name button{
+	margin-top: 10px;
+	width: 100px;
+	height: 30px;
+	border-radius: 10px;
+	border: 0;
+	background-color: red;
+	color: white;
+	font-family: tilt warp;
+	cursor: pointer;
+	transition: 0.4s;
+	margin-bottom: -16px;
+}
+.players .player .content .name button:hover{
+	background-color: white;
+	color: red;
+	box-shadow: 0 0 15px red;
+}
+.players .player .content .rating{
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	box-sizing: border-box;
+	justify-content: center;
+	text-align: center;
+}
+.players .player .content .rating h1{
+	font-size: 4em;
+	color: white;
+	font-family: montserrat;
+	transition: 0.4s;
+}
+.players .player .content .rating button{
+	margin-bottom: 0px;
+	margin-top: 0px;
+	width: 100%;
+	height: 30px;
+	border-radius: 10px;
+	display: flex;
+	place-items: center;
+	justify-content: center;
+	text-align: center;
+	border: 0;
+	background-color: green;
+	color: white;
+	font-family: shantell sans;
+	cursor: pointer;
+	transition: 0.4s;
+}
+.players .player .content .rating button:hover{
+	background-color: white;
+	color: green;
+	box-shadow: 0 0 15px green;
+	cursor: crosshair;
+}
+.openpicker{
+	height: 60px;
+	width: 60px;
+	border: 0;
+	border-radius: 60px;
+	background-color: green;
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+	display: flex;
+	justify-content: center;
+	place-items: center;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+.openpicker svg{
+	height: 30px;
+	width: 30px;
+	fill: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.manager{
+	background: white;
+	height: 100vh;
+	width: 100vw;
+	padding: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#container {
+	width: 50vw;
+	height: 100vh;
+	border: 0px solid black;
+	position: relative;
+	background-image: url(https://imagecache.365scores.com/image/upload/f_png,c_limit,q_auto:eco,dpr_1/website/Football_Field);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	float: left;
+}
+.draggable {
+	font-family: poppins;
+	font-size: 1.3em;
+	font-weight: 700;
+	text-transform: uppercase;
+	position: absolute;
+	left: 20%;
+	cursor: move;
+	background-color: white;
+	box-shadow: 0 0 15px rgba(0,0,0,.5);
+	border-radius: 10px;
+	padding: 10px;
+	border: 3px solid rgba(11, 158, 82, .3);
+}
+
+.extinfo{
+	width: 40vw;
+}
+.extinfo header{
+	padding: 15px;
+	border-radius: 15px 15px 0px 0px;
+	background-color: green;
+	color: white;
+}
+.extinfo header h1{
+	margin: 0;
+	font-family: poppins;
+	text-transform: uppercase;
+}
+.extinfo header h2{
+	font-family: montserrat;
+	opacity: .7;
+}
+.extinfo main{
+	background-color: white;
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+	padding: 10px;
+	border-radius: 0px 0px 10px 10px;
+	font-family: poppins;
+	font-size: 0.75em;
+}
+.extinfo.additional{
+	max-height: 25vh;
+	margin-top: 10px;
+}
+
+.manscout{
+	width: 40vw;
+	display: flex;
+	place-items: flex-end;
+	overflow: hidden;
+	background-image: linear-gradient(45deg, darkcyan, lightgreen, darkcyan, lightgreen, darkcyan);
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+	margin-top: 10px;
+	border-radius: 15px;
+	height: 25vh;
+	background-size: 200%;
+	transition: 0.4s;
+}
+.manscout:hover{
+	cursor: pointer;
+	background-size: 100%;
+	transform: scale(1.03, 1.03);
+}
+.manscout:active{
+	transform: scale(1,1);
+}
+.manscout div{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+}
+.manscout img{
+	height: 90%;
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.manscout h1{
+	margin: 0;
+	color: white;
+	font-family: poppins;
+	text-transform: uppercase;
+}
+.manscout h1 span{
+	background: white;
+	color: darkcyan;
+	padding-left: 4px;
+	padding-right: 4px;
+	border-radius: 5px;
+}
+.manscout p{
+	font-family: poppins;
+	color: white;
+}
+.containeroutermost{
+	width: 50vw;
+	place-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.manager{
+	transition: 1s;
+	position: absolute;
+	top: 0;
+	left: -100%;
+}
+.backbuttonmanager{
+	position: absolute;
+	top: 20px;
+	left: -50%;
+	background-color: green;
+	font-family: poppins;
+	border-radius: 10px;
+	padding: 15px;
+	color: white;
+	cursor: pointer;
+	transition: 0.5s;
+	font-weight: 700;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Archivo+Narrow);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
+.cube-folding {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	font-size: 0;
+	transition: 0.5s;
+}
+.cube-folding span {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	transform: scale(1.1);
+	display: inline-block;
+}
+.cube-folding span::before {
+	content: "";
+	background-color: white;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 50px;
+	height: 50px;
+	-moz-transform-origin: 100% 100%;
+	-ms-transform-origin: 100% 100%;
+	-webkit-transform-origin: 100% 100%;
+	transform-origin: 100% 100%;
+	-webkit-animation: folding 2.5s infinite linear both;
+	-moz-animation: folding 2.5s infinite linear both;
+	animation: folding 2.5s infinite linear both;
+}
+.cube-folding .leaf2 {
+	-webkit-transform: rotateZ(90deg) scale(1.1);
+	-moz-transform: rotateZ(90deg) scale(1.1);
+	transform: rotateZ(90deg) scale(1.1);
+}
+.cube-folding .leaf2::before {
+	-webkit-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+	background-color: #f2f2f2;
+}
+.cube-folding .leaf3 {
+	-webkit-transform: rotateZ(270deg) scale(1.1);
+	-moz-transform: rotateZ(270deg) scale(1.1);
+	transform: rotateZ(270deg) scale(1.1);
+}
+.cube-folding .leaf3::before {
+	-webkit-animation-delay: 0.9s;
+	animation-delay: 0.9s;
+	background-color: #f2f2f2;
+}
+.cube-folding .leaf4 {
+	-webkit-transform: rotateZ(180deg) scale(1.1);
+	-moz-transform: rotateZ(180deg) scale(1.1);
+	transform: rotateZ(180deg) scale(1.1);
+}
+.cube-folding .leaf4::before {
+	-webkit-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+	background-color: #e6e6e6;
+}
+@-webkit-keyframes folding {
+	0%,
+	10% {
+		-webkit-transform: perspective(140px) rotateX(-180deg);
+		-moz-transform: perspective(140px) rotateX(-180deg);
+		transform: perspective(140px) rotateX(-180deg);
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		opacity: 0;
+	}
+	25%,
+	75% {
+		-webkit-transform: perspective(140px) rotateX(0deg);
+		-moz-transform: perspective(140px) rotateX(0deg);
+		transform: perspective(140px) rotateX(0deg);
+		-webkit-opacity: 1;
+		-moz-opacity: 1;
+		opacity: 1;
+	}
+	90%,
+	100% {
+		-webkit-transform: perspective(140px) rotateY(180deg);
+		-moz-transform: perspective(140px) rotateY(180deg);
+		transform: perspective(140px) rotateY(180deg);
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		opacity: 0;
+	}
+}
+@-moz-keyframes folding {
+	0%,
+	10% {
+		-webkit-transform: perspective(140px) rotateX(-180deg);
+		-moz-transform: perspective(140px) rotateX(-180deg);
+		transform: perspective(140px) rotateX(-180deg);
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		opacity: 0;
+	}
+	25%,
+	75% {
+		-webkit-transform: perspective(140px) rotateX(0deg);
+		-moz-transform: perspective(140px) rotateX(0deg);
+		transform: perspective(140px) rotateX(0deg);
+		-webkit-opacity: 1;
+		-moz-opacity: 1;
+		opacity: 1;
+	}
+	90%,
+	100% {
+		-webkit-transform: perspective(140px) rotateY(180deg);
+		-moz-transform: perspective(140px) rotateY(180deg);
+		transform: perspective(140px) rotateY(180deg);
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		opacity: 0;
+	}
+}
+@-ms-keyframes folding {
+	0%,
+	10% {
+		-webkit-transform: perspective(140px) rotateX(-180deg);
+		-moz-transform: perspective(140px) rotateX(-180deg);
+		transform: perspective(140px) rotateX(-180deg);
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		opacity: 0;
+	}
+	25%,
+	75% {
+		-webkit-transform: perspective(140px) rotateX(0deg);
+		-moz-transform: perspective(140px) rotateX(0deg);
+		transform: perspective(140px) rotateX(0deg);
+		-webkit-opacity: 1;
+		-moz-opacity: 1;
+		opacity: 1;
+	}
+	90%,
+	100% {
+		-webkit-transform: perspective(140px) rotateY(180deg);
+		-moz-transform: perspective(140px) rotateY(180deg);
+		transform: perspective(140px) rotateY(180deg);
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		opacity: 0;
+	}
+}
+@keyframes folding {
+	0%,
+	10% {
+		-webkit-transform: perspective(140px) rotateX(-180deg);
+		-moz-transform: perspective(140px) rotateX(-180deg);
+		transform: perspective(140px) rotateX(-180deg);
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		opacity: 0;
+	}
+	25%,
+	75% {
+		-webkit-transform: perspective(140px) rotateX(0deg);
+		-moz-transform: perspective(140px) rotateX(0deg);
+		transform: perspective(140px) rotateX(0deg);
+		-webkit-opacity: 1;
+		-moz-opacity: 1;
+		opacity: 1;
+	}
+	90%,
+	100% {
+		-webkit-transform: perspective(140px) rotateY(180deg);
+		-moz-transform: perspective(140px) rotateY(180deg);
+		transform: perspective(140px) rotateY(180deg);
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		opacity: 0;
+	}
+}
+.cube-wrapper {
+	width: 100px;
+	height: 100px;
+	transition: 0.4s;
+	text-align: center;
+}
+.cube-wrapper:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	transition: 0.4s;
+	display: none;
+	margin: auto;
+	width: 90px;
+	height: 6px;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.1);
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	-webkit-animation: shadow 0.5s ease infinite alternate;
+	-moz-animation: shadow 0.5s ease infinite alternate;
+	animation: shadow 0.5s ease infinite alternate;
+}
+.cube-wrapper .loading {
+	font-size: 1.5em;
+	letter-spacing: 0.1em;
+	display: block;
+	color: white;
+	text-transform: uppercase;
+	opacity: 0.5;
+	font-family: poppins;
+	position: relative;
+	top: 50px;
+	z-index: 2;
+	-webkit-animation: text 0.5s ease infinite alternate;
+	-moz-animation: text 0.5s ease infinite alternate;
+	animation: text 0.5s ease infinite alternate;
+}
+@-webkit-keyframes text {
+	100% {
+		top: 35px;
+	}
+}
+@-moz-keyframes text {
+	100% {
+		top: 35px;
+	}
+}
+@-ms-keyframes text {
+	100% {
+		top: 35px;
+	}
+}
+@keyframes text {
+	100% {
+		top: 35px;
+	}
+}
+@-webkit-keyframes shadow {
+	100% {
+		bottom: -18px;
+		width: 100px;
+	}
+}
+@-moz-keyframes shadow {
+	100% {
+		bottom: -18px;
+		width: 100px;
+	}
+}
+@-ms-keyframes shadow {
+	100% {
+		bottom: -18px;
+		width: 100px;
+	}
+}
+@keyframes shadow {
+	100% {
+		bottom: -18px;
+		width: 100px;
+	}
+}
+.loading-container h1 {
+	display: block;
+	text-align: center;
+	color: #fff;
+	font-weight: 300;
+	text-shadow: 0 0 30px rgba(256, 256, 256, 0.5);
+	font-size: 11vw;
+	font-family: poppins;
+	font-weight: 800;
+}
+.loading-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	place-items: center;
+	position: absolute;
+	z-index: 1111;
+	height: 100%;
+	background-image: linear-gradient(45deg, green, darkgreen);
+	left: 0;
+	top: 0;
+	transition: 1s;
+	width: 100%;
+}
+.loading {
+	transition: 0.5s;
+	transition-delay: 0.3s;
+	font-family: poppins;
+}
+
+
+.updateBanner{
+	position: absolute;
+	left: -200%;
+	top: 50%;
+	height: 80vh;
+	z-index: 300;
+	cursor: help;
+	transition: 1s;
+	transform: translate(-50%, -50%);
+}
+.openbanner{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-size: 1.1em;
+	background-color: green;
+	height: 60px;
+	width: 60px;
+	color: white;
+	font-family: poppins;
+	font-weight: 600;
+	border-radius: 50%;
+	text-transform: uppercase;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	place-items: center;
+	border: 0;
+	transition: 0.4s;
+	box-shadow: inset 0 0 0 0 white, 0 0 20px transparent;
+}
+.openbanner span{
+	transition: 0.4s;
+}
+.openbanner:hover span{
+	transform: scale(1.4, 1.4);
+}
+.openbanner:hover{
+	cursor: pointer;
+	color: green;
+	box-shadow: inset 60px 0 0 0 white, 0 0 20px green;
+}
+.darkness{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,.7);
+	z-index: -111;
+	opacity: 0;
+	position: absolute;
+	transition: 1s;
+}</style>
+  <script src="script.js">
+    setTimeout(function(){
+document.querySelector(".cube-folding").style.opacity = "0";
+document.querySelector(".cube-wrapper .loading").innerHTML = "DONE!";
+document.querySelector(".cube-wrapper .loading").style.animation = "none";
+}, 4500);
+setTimeout(function(){
+document.querySelector(".loading-container").style.opacity = "0";
+setTimeout(function(){
+document.querySelector(".loading-container").style.display = "none";
+}, 1000)
+}, 6000);
+
+var sold = 0;
+function sellplayer(signal){
+var confirmation = confirm("Are you sure you want to sell this player?" + " [ENTER]");
+
+if(confirmation === true){
+sold++;
+playercount--;
+if(sold === 1){
+document.querySelector(".achievement h2").innerHTML = "Charge it";
+achievement();
+}
+var buttonparent = signal.parentElement;
+var ultimateparent = buttonparent.parentElement;
+var lastparent = ultimateparent.parentElement;
+//document.querySelector(lastparent.className)
+var theclass = lastparent.className;
+theclass = theclass.toString();
+var xy = ultimateparent.children[1].innerHTML;
+const thatindex = texts.indexOf(xy);
+if (thatindex > -1) { // only splice array when item is found
+array.splice(index, 1); // 2nd parameter means remove one item only
+}
+//arrange();
+
+var children = document.getElementById("container").children;
+for (var i = 0; i < children.length; i++) {
+var tableChild = children[i];
+if(tableChild.innerHTML === buttonparent.children[1].innerHTML){
+  tableChild.style.display = "none";
+}
+}
+
+var thing = theclass.split(' ')[1];
+console.log(thing);
+var elems = document.querySelector(".playerinner." + thing);
+var index = 0, length = elems.length;
+for ( ; index < length; index++) {
+elems[index].style.display = "none";
+}
+lastparent.style.display = "none";
+coins = coins + 500;
+document.getElementById("currency").innerHTML = coins;
+document.getElementById("internalcurrency").innerHTML = coins;
+alert("500 Coins recieved!");
+var ratingtotal;
+for(let i = 0; i < myteam.length; i++){
+ratingtotal = myteam[i].rating + ratingtotal;
+teamaverage = ratingtotal / myteam.length;
+document.getElementById("averagedata").innerHTML = teamaverage;
+}
+}
+}
+
+// Array of texts for the h1 elements
+var texts = [];
+
+var container = document.getElementById('container');
+
+// Generate h1 elements and append them to the container
+function arrange(text){
+//container.innerHTML = null;
+var h1 = document.createElement('h1');
+h1.className = 'draggable';
+h1.textContent = text;
+
+container.appendChild(h1);
+// Make h1 elements draggable
+var draggableElements = document.getElementsByClassName('draggable');
+Array.from(draggableElements).forEach(function(element) {
+element.addEventListener('mousedown', dragStart);
+});
+}
+
+var currentElement = null;
+
+function dragStart(e) {
+currentElement = e.target;
+currentElement.style.zIndex = 1;
+currentElement.style.opacity = 0.5;
+
+// Get the initial position of the element
+currentElement.initialX = e.clientX - currentElement.getBoundingClientRect().left;
+currentElement.initialY = e.clientY - currentElement.getBoundingClientRect().top;
+
+// Register mousemove and mouseup events to track element movement
+document.addEventListener('mousemove', drag);
+document.addEventListener('mouseup', dragEnd);
+}
+
+function drag(e) {
+if (currentElement) {
+e.preventDefault();
+
+// Calculate the new position of the element
+var newX = e.clientX - currentElement.initialX - container.getBoundingClientRect().left;
+var newY = e.clientY - currentElement.initialY - container.getBoundingClientRect().top;
+
+// Boundary checks to prevent dragging outside the container
+var containerWidth = container.offsetWidth;
+var containerHeight = container.offsetHeight;
+
+newX = Math.max(0, Math.min(newX, containerWidth - currentElement.offsetWidth));
+newY = Math.max(0, Math.min(newY, containerHeight - currentElement.offsetHeight));
+
+// Apply the new position to the element
+currentElement.style.left = newX + 'px';
+currentElement.style.top = newY + 'px';
+}
+}
+
+function dragEnd(e) {
+if (currentElement) {
+currentElement.style.zIndex = '';
+currentElement.style.opacity = '';
+
+// Unregister mousemove and mouseup events since dragging is finished
+document.removeEventListener('mousemove', drag);
+document.removeEventListener('mouseup', dragEnd);
+
+// Reset currentElement
+currentElement = null;
+}
+}
+
+function achievement(){
+var banner = document.querySelector(".achievement");
+banner.style.left = "20px";
+setTimeout(hideit, 3000);
+}
+
+function showpicker(){
+document.querySelector(".picker").style.right = "0";
+}
+
+function hideit(){
+var banner = document.querySelector(".achievement");
+banner.style.left = "-100%";
+}
+
+var football = document.querySelector(".football").style.background;
+
+function ballone(){
+document.querySelector(".football").style.background = "url(https://www.pngkit.com/png/full/75-753251_adidas-fifa-world-cup-top-replique-football-russia.png)";
+document.querySelector(".football").style.backgroundSize = "102%";
+document.querySelector(".football").style.backgroundPosition = "center";
+document.querySelector(".picker").style.right = "-100%";
+}
+function balltwo(){
+document.querySelector(".football").style.background = "url(https://www.pngfind.com/pngs/b/424-4248125_ball-bola-sepakbola-football-champions-league-ball-2018.png)";
+document.querySelector(".picker").style.right = "-100%";
+document.querySelector(".football").style.backgroundSize = "102%";
+document.querySelector(".football").style.backgroundPosition = "center";
+}
+function ballthree(){
+document.querySelector(".football").style.background = "url(https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Sport-PNG/Euro_Cup_2016_France_Ball_PNG_Transparent_Clip_Art_Image.png?m=1461812102)";
+document.querySelector(".picker").style.right = "-100%";
+document.querySelector(".football").style.backgroundSize = "102%";
+document.querySelector(".football").style.backgroundPosition = "center";
+}
+function ballfour(){
+document.querySelector(".football").style.background = "url(https://www.pngarts.com/files/3/Nike-Football-PNG-Image-Background.png)";
+document.querySelector(".picker").style.right = "-100%";
+document.querySelector(".football").style.backgroundSize = "102%";
+document.querySelector(".football").style.backgroundPosition = "center";
+}
+function ballfive(){
+document.querySelector(".football").style.background = "url(https://cdn.shopify.com/s/files/1/0314/1055/2965/products/CU8053-100-PHSFZ001-2000_1200x1200.png?v=1625048937)";
+document.querySelector(".picker").style.right = "-100%";
+document.querySelector(".football").style.backgroundSize = "102%";
+document.querySelector(".football").style.backgroundPosition = "center";
+}
+function ballsix(){
+document.querySelector(".football").style.background = "url(https://www.pngarts.com/files/3/Adidas-Football-Download-Transparent-PNG-Image.png)";
+document.querySelector(".picker").style.right = "-100%";
+document.querySelector(".football").style.backgroundSize = "102%";
+document.querySelector(".football").style.backgroundPosition = "center";
+}
+
+var playercount = 0;
+var level = 1;
+function levels(){
+if(clicks === 50){
+level++;
+document.querySelector(".levels h1").innerHTML = "BEGINNER";
+document.querySelector(".achievement h2").innerHTML = "50 Clicker";
+achievement();
+document.querySelector(".levels").style.backgroundColor = "#038f46";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+} else if(clicks === 100){
+level++;
+document.querySelector(".levels h1").innerHTML = '"THE PHASE"';
+document.querySelector(".achievement h2").innerHTML = "Getting on with it";
+achievement();
+document.querySelector(".levels").style.backgroundColor = "#04c762";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+} else if(clicks === 150){
+level++;
+document.querySelector(".levels h1").innerHTML = '"JUST A PHASE"';
+// no achievement
+document.querySelector(".levels").style.backgroundColor = "#0073ff";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+} else if(clicks === 200){
+level++;
+document.querySelector(".levels h1").innerHTML = 'SOME COLD GUY';
+document.querySelector(".achievement h2").innerHTML = "The cool kid";
+achievement();
+document.querySelector(".levels").style.backgroundColor = "#0022ff";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+}  else if(clicks === 250){
+level++;
+document.querySelector(".levels h1").innerHTML = 'RESPECT ME';
+document.querySelector(".achievement h2").innerHTML = "Getting old";
+achievement();
+document.querySelector(".levels").style.backgroundColor = "#8400ff";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+} else if(clicks === 300){
+level++;
+document.querySelector(".levels h1").innerHTML = 'SWEATY FINGER';
+// no achievement
+document.querySelector(".levels").style.backgroundColor = "#ee00ff";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+} else if(clicks === 350){
+level++;
+document.querySelector(".levels h1").innerHTML = 'TRY-HARD';
+document.querySelector(".achievement h2").innerHTML = "This yute tries too hard";
+achievement();
+document.querySelector(".levels").style.backgroundColor = "#ff00c3";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+} else if(clicks === 400){
+level++;
+document.querySelector(".levels h1").innerHTML = 'HACKER';
+document.querySelector(".achievement h2").innerHTML = "Man said hacker";
+achievement();
+document.querySelector(".levels").style.backgroundColor = "#ffc400";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+} else if(clicks === 500){
+level++;
+document.querySelector(".levels h1").innerHTML = 'YOU HAVE NO LIFE';
+// no achievement
+document.querySelector(".levels").style.backgroundColor = "#ff5e00";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+} else if(clicks === 600){
+level++;
+document.querySelector(".levels h1").innerHTML = 'THIS GUY';
+// no achievement
+document.querySelector(".levels").style.backgroundColor = "#ff4d00";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+} else if(clicks === 700){
+level++;
+document.querySelector(".levels h1").innerHTML = 'FAMILY LEFT YOU';
+document.querySelector(".achievement h2").innerHTML = "Getting closer and closer";
+achievement();
+document.querySelector(".levels").style.backgroundColor = "#ff2200";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+} else if(clicks === 1000){
+level++;
+document.querySelector(".levels h1").innerHTML = 'HIM';
+document.querySelector(".achievement h2").innerHTML = "He's just <strong>HIM</strong>";
+achievement();
+document.querySelector(".levels").style.backgroundColor = "#ff0000";
+document.getElementById("levelno").innerHTML = level;
+document.querySelector(".levelnoto").innerHTML = level;
+}
+}
+
+function removeItemOnce(arr, value) {
+var index = arr.indexOf(value);
+if (index > -1) {
+arr.splice(index, 1);
+}
+return arr;
+}
+
+function removeItemAll(arr, value) {
+var i = 0;
+while (i < arr.length) {
+if (arr[i] === value) {
+arr.splice(i, 1);
+} else {
+++i;
+}
+}
+return arr;
+}
+
+
+var teamaverage = 85;
+var noplayers = 0;
+var clicks = 0;
+var coins = 18000;
+var players = document.querySelector(".players");
+
+document.querySelector(".football").addEventListener('mousedown', event => {
+document.querySelector(".football").style.transform = "scale(0.95, 0.95)";
+})
+
+document.querySelector(".football").addEventListener('mouseup', event => {
+document.querySelector(".football").style.transform = "scale(1, 1)";
+})
+
+document.addEventListener('keyup', event => {
+if (event.code === 'Space') {
+coins = coins + 5;
+clicks++;
+document.getElementById("clicks").innerHTML = clicks;
+document.getElementById("currency").innerHTML = coins;
+document.getElementById("internalcurrency").innerHTML = coins;
+
+levels(); document.querySelector(".football").style.transform = "scale(1, 1)";
+}
+})
+
+document.addEventListener('keydown', event => {
+if (event.code === 'Space') {
+document.querySelector(".football").style.transform = "scale(0.95, 0.95)";
+}
+})
+
+
+var adjacents = ["BANG!", "BOOM!", "TAP!", "BAM!", "POW!"];
+var adjective = document.getElementById("adjective");
+function addClick(){
+var randomAdj = adjacents[Math.floor(Math.random() * adjacents.length)];
+var rano = Math.floor(Math.random() * 50);
+rano = rano - 25;
+adjective.style.zIndex = 6;
+adjective.style.opacity = "1";
+adjective.innerHTML = randomAdj;
+var xposition = (event.clientX - adjective.offsetLeft - adjective.offsetWidth/2);
+var yposition = (event.clientY - adjective.offsetTop - adjective.offsetHeight/2);
+adjective.style.transform = "translate("+ xposition + "px," + (yposition - 15) + "px)";
+setTimeout(opaque, 100);
+coins = coins + 5;
+clicks++;
+document.getElementById("clicks").innerHTML = clicks;
+document.getElementById("currency").innerHTML = coins;
+document.getElementById("internalcurrency").innerHTML = coins;
+levels();
+}
+function opaque(){
+adjective.style.zIndex = -2;
+adjective.style.opacity = "0";
+}
+
+document.getElementById("clicks").innerHTML = clicks;
+document.getElementById("currency").innerHTML = coins;
+document.getElementById("internalcurrency").innerHTML = coins;
+
+var myteam = [];
+
+var ratingtotal;
+for(let i = 0; i < myteam.length; i++){
+ratingtotal = myteam[i].rating + ratingtotal;
+teamaverage = ratingtotal / myteam.length;
+document.getElementById("averagedata").innerHTML = teamaverage;
+}
+
+function showteam(){
+document.querySelector(".teamsheet").style.top = "0";
+document.querySelector(".openpicker").style.display = "none";
+document.querySelector(".opentheteamsheet").style.opacity = "0";
+document.querySelector(".openbanner").style.display = "none";
+}
+function hideteam(){
+document.querySelector(".teamsheet").style.top = "-120%";
+document.querySelector(".openpicker").style.display = "block";
+document.querySelector(".opentheteamsheet").style.opacity = "1";
+document.querySelector(".openbanner").style.display = "block";
+}
+
+var messi = {
+firstName:"Lionel", 
+lastName:"Messi", 
+position: "ATTACK",
+club: "PSG",
+rating: "94",
+pic: "https://cdn.britannica.com/35/238335-050-2CB2EB8A/Lionel-Messi-Argentina-Netherlands-World-Cup-Qatar-2022.jpg"
+};
+var mbappe = {
+firstName:"Kylian", 
+lastName:"Mbappé", 
+position: "ATTACK",
+club: "PSG",
+rating: "93",
+pic: "https://cdn.britannica.com/39/239139-050-49A950D1/French-soccer-player-Kylian-Mbappe-FIFA-World-Cup-December-10-2022.jpg"
+};
+var immanuel = {
+  firstName: "Mwale",
+  lastName: "Immanuel",
+  position: "Zimbabwe",
+  club: "Try-Hards",
+  rating: "1.3",
+  pic: "https://media.istockphoto.com/id/637252950/photo/pre-adolescent-honduran-boy-with-large-build.jpg?s=612x612&w=0&k=20&c=9cI-WDUAXjlVdZ2k9EaPbIb2BnhKfajDqAj61Ag_fTM="
+}
+var ksi = {
+  firstName: "JJ",
+  lastName: "Olatunji",
+  position: "Sidemen",
+  club: "Sidemen",
+  rating: "94",
+  pic: "https://lastfm.freetls.fastly.net/i/u/ar0/cf5a75a0bc3a9a182a507d05cd14d93f.jpg"
+}
+var yousef = {
+firstName: "Yousef",
+lastName:"Paran", 
+position: "MIDFIELD",
+club: "Fisher Legends",
+rating: "90",
+pic: "https://cdna.artstation.com/p/assets/images/images/055/839/428/large/donato-morera-calamardo.jpg?1667867764"
+}
+var benzema = {
+firstName:"Karim", 
+lastName:"Benzema", 
+position: "ATTACK",
+club: "Real Madrid",
+rating: "93",
+pic: "https://ronaldo.com/wp-content/uploads/2018/09/KB9.jpg"
+};
+var haaland = {
+firstName:"Erling", 
+lastName:"Haaland", 
+position: "ATTACK",
+club: "Man City",
+rating: "92",
+pic: "https://www.footballinsider247.com/static/uploads/1/2022/10/Erling-Haaland-with-ball.jpeg"
+};
+var modric = {
+firstName:"Luka", 
+lastName:"Modric", 
+position: "MIDFIELD",
+club: "Real Madrid",
+rating: "91",
+pic: "https://therealchamps.com/wp-content/uploads/getty-images/2017/07/1449863570.jpeg"
+};
+var debruyne = {
+firstName:"Kevin", 
+lastName:"De Bruyne", 
+position: "MIDFIELD",
+club: "Man City",
+rating: "91",
+pic: "https://www.mancity.com/meta/media/4fzd2fxd/gettyimages-1423724077.jpg?width=1620"
+};
+var lewandowski = {
+firstName:"Robert", 
+lastName:"Lewandowski", 
+position: "ATTACK",
+club: "Barcelona",
+rating: "91",
+pic: "https://bayernstrikes.com/wp-content/uploads/getty-images/2017/07/1364823906.jpeg"
+};
+var vinicius = {
+firstName:"", 
+lastName:"Vinicius JR", 
+position: "ATTACK",
+club: "Real Madrid",
+rating: "90",
+pic: "https://i0.wp.com/www.elartedf.com/wp-content/uploads/2022/01/fc-barcelona-v-real-madrid-cf-la-liga-santander.jpg?fit=1397%2C1000&ssl=1"
+};
+var salah = {
+firstName:"Mohammed", 
+lastName:"Salah", 
+position: "ATTACK",
+club: "Liverpool",
+rating: "90",
+pic: "https://digitalhub.fifa.com/transform/f5899e2a-4a45-4d4f-9653-80f95627aceb/Mo-Salah-celebrates-scoring-for-Liverpool"
+};
+var mane = {
+firstName:"Sadio", 
+lastName:"Mané", 
+position: "ATTACK",
+club: "Bayern Munich",
+rating: "89",
+pic: "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2022/10/05/16649569950078.jpg"
+};
+var kane = {
+firstName:"Harry", 
+lastName:"Kane", 
+position: "ATTACK",
+club: "Tottenham",
+rating: "90",
+pic: "https://images.teamtalk.com/content/uploads/2022/09/07070952/tottenham-striker-harry-kane.jpg"
+};
+var bellingham = {
+firstName:"Jude", 
+lastName:"Bellingham", 
+position: "MIDFIELD",
+club: "Dortmund",
+rating: "89",
+pic: "https://d2x51gyc4ptf2q.cloudfront.net/content/uploads/2023/03/02201749/Jude-Bellingham-Liverpool-F365-3.jpg"
+};
+var casemiro = {
+firstName:"Carlos", 
+lastName:"Casemiro", 
+position: "MIDFIELD",
+club: "Man United",
+rating: "89",
+pic: "https://e0.365dm.com/23/01/768x432/skysports-casemiro-man-utd_6039430.jpg?20230128215246"
+};
+var hakimi = {
+firstName:"Achraf", 
+lastName:"Hakimi", 
+position: "DEFENSE",
+club: "PSG",
+rating: "90",
+pic: "https://phantom-marca.unidadeditorial.es/2ab83135da1a22daa1538a6d820123ab/resize/1320/f/jpg/assets/multimedia/imagenes/2023/03/03/16778407193897.jpg"
+};
+var griezmann = {
+firstName:"Antione", 
+lastName:"Griezmann", 
+position: "ATTACK",
+club: "Atletico Madrid",
+rating: "89",
+pic: "https://s.yimg.com/ny/api/res/1.2/lNFsK4Bu61WzVMXaBAfb6g--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQzMw--/https://s.yimg.com/os/creatr-uploaded-images/2022-12/86e4ec40-7b16-11ed-8fcf-298f2da03b58"
+};
+var neymar = {
+firstName:"", 
+lastName:"Neymar JR", 
+position: "ATTACK",
+club: "PSG",
+rating: "92",
+pic: "https://b1119668.smushcdn.com/1119668/wp-content/uploads/2020/02/GettyImages-1190256544-1.jpg?lossy=1&strip=1&webp=1"
+};
+var ronaldo = {
+firstName:"Cristiano", 
+lastName:"Ronaldo", 
+position: "ATTACK",
+club: "Al-Nassr",
+rating: "89",
+pic: "https://images2.thanhnien.vn/Uploaded/gianglao/2022_12_04/cristiano-ronaldo-9042.jpeg"
+};
+var kimmich = {
+firstName:"Joshua", 
+lastName:"Kimmich", 
+position: "MIDFIELD",
+club: "Bayern Munich",
+rating: "88",
+pic: "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2021/11/19/16373366478557.jpg"
+};
+var vandijk = {
+firstName:"Virgil", 
+lastName:"Van Dijk", 
+position: "DEFENSE",
+club: "Liverpool",
+rating: "90",
+pic: "https://static.independent.co.uk/2023/02/22/11/120750c480a73b2949e2c4b13108b6fdY29udGVudHNlYXJjaGFwaSwxNjc3MTQ3ODk1-2.71081195.jpg"
+};
+var son = {
+firstName:"Heung Min", 
+lastName:"Son", 
+position: "ATTACK",
+club: "Tottenham",
+rating: "89",
+pic: "https://static.independent.co.uk/2023/02/20/09/c889d17b9b5ceec17a544f70273dcc97Y29udGVudHNlYXJjaGFwaSwxNjc2OTcxMjkx-2.71056228.jpg"
+};
+var dias = {
+firstName:"Ruben", 
+lastName:"Dias", 
+position: "DEFENSE",
+club: "Man City",
+rating: "87",
+pic: "https://cloudinary.fifa.com/m/2a4115614e43a4f/original/Ruben-Dias-of-Portugal-during-the-UEFA-Nations-league-match-between-Portugal-v-Spain.jpg"
+};
+var silva = {
+firstName:"Bernardo", 
+lastName:"Silva", 
+position: "MIDFIELD",
+club: "Man City",
+rating: "87",
+pic: "https://phantom-marca.unidadeditorial.es/b09bc2c9c63c2624bd6ed1e3b0d24747/f/jpg/assets/multimedia/imagenes/2021/01/25/16115659949921.jpg"
+};
+var kante = {
+firstName:"N'Golo", 
+lastName:"Kanté", 
+position: "MIDFIELD",
+club: "Chelsea",
+rating: "90",
+pic: "https://e0.365dm.com/16/04/2048x1152/ngolo-kante-leicester_3440862.jpg"
+};
+var cancelo = {
+firstName:"Joao", 
+lastName:"Cancelo", 
+position: "DEFENSE",
+club: "Bayern Munich",
+rating: "87",
+pic: "https://www.mancity.com/meta/media/5xjliptz/m2_06421.png?width=1620"
+};
+var marquinhos = {
+firstName:"Marcos", 
+lastName:"Marquinhos", 
+position: "DEFENSE",
+club: "PSG",
+rating: "88",
+pic: "https://icdn.psgtalk.com/wp-content/uploads/2021/09/marquinhos-psg-v-clermont-foot-ligue-1-2021.jpg"
+};
+var kroos = {
+firstName:"Toni", 
+lastName:"Kroos", 
+position: "MIDFIELD",
+club: "Real Madrid",
+rating: "89",
+pic: "https://therealchamps.com/wp-content/uploads/getty-images/2017/07/1465989624.jpeg"
+};
+var rodri = {
+firstName:"Cascante", 
+lastName:"Rodri", 
+position: "MIDFIELD",
+club: "Man City",
+rating: "85",
+pic: "https://cloudfront-us-east-2.images.arcpublishing.com/reuters/C5ND7HTIHZKSJIRADXFPVVUDFU.jpg"
+};
+var dejong = {
+firstName:"Frenkie", 
+lastName:"De Jong", 
+position: "MIDFIELD",
+club: "Barcelona",
+rating: "86",
+pic: "https://barcauniversal.com/wp-content/uploads/2021/03/1001454397-scaled.jpg"
+};
+var verrati = {
+firstName:"Marco", 
+lastName:"Verrati", 
+position: "MIDFIELD",
+club: "PSG",
+rating: "85",
+pic: "https://www.topmercato.com/wp-content/uploads/2022/12/Marco-Verratti-Paris-PSG-Paris-Saint-Germain.jpg"
+};
+var robertson = {
+firstName:"Andrew", 
+lastName:"Robertson", 
+position: "DEFENSE",
+club: "Liverpool",
+rating: "87",
+pic: "https://www.telegraph.co.uk/content/dam/news/2022/12/30/TELEMMGLPICT000320749299_trans_NvBQzQNjv4BqM4jyXBDWA13jCDOSysTa2xa306WnPHVE_UdBq2uCdwc.jpeg"
+};
+var alisson = {
+firstName:"Becker", 
+lastName:"Alisson", 
+position: "GOALKEEPER",
+club: "Liverpool",
+rating: "93",
+pic: "https://backend.liverpoolfc.com/sites/default/files/styles/xl/public/acquiadam/2023-02/Alisson-Becker-180223.jpg?itok=UExWsw38"
+};
+var ederson = {
+firstName:"Santana", 
+lastName:"Ederson", 
+position: "GOALKEEPER",
+club: "Man City",
+rating: "92",
+pic: "https://i2-prod.manchestereveningnews.co.uk/sport/football/football-news/article23231296.ece/ALTERNATES/s1200c/0_GettyImages-1372999324.jpg"
+};
+var lloris = {
+firstName:"Hugo", 
+lastName:"Lloris", 
+position: "GOALKEEPER",
+club: "Tottenham",
+rating: "91",
+pic: "https://cdn.vox-cdn.com/thumbor/ufqEW1h3mWHG_URkRj0pg5TfHBM=/0x0:3249x2229/1200x800/filters:focal(1547x504:2065x1022)/cdn.vox-cdn.com/uploads/chorus_image/image/70413616/1357716407.0.jpg"
+};
+var courtois = {
+firstName:"Thibaut", 
+lastName:"Courtois", 
+position: "GOALKEEPER",
+club: "Real Madrid",
+rating: "93",
+pic: "https://talksport.com/wp-content/uploads/sites/5/2019/02/Courtois.jpg?strip=all&quality=100&w=1920&h=1440&crop=1"
+};
+var donnaruma = {
+firstName:"Ganluigi", 
+lastName:"Donnaruma", 
+position: "GOALKEEPER",
+club: "PSG",
+rating: "90",
+pic: "https://www.foot01.com/img/images/1200x/2023/Jan/02/donnarumma-en-grand-danger-tempete-au-psg-icon_pl5_1432-355302.jpg"
+};
+var martinez = {
+firstName:"Emiliano", 
+lastName:"Martinez", 
+position: "GOALKEEPER",
+club: "Aston Villa",
+rating: "92",
+pic: "https://static.toiimg.com/photo/msid-78145895/78145895.jpg"
+};
+var pickford = {
+firstName:"Jordan", 
+lastName:"Pickford", 
+position: "GOALKEEPER",
+club: "Everton",
+rating: "89",
+pic: "https://static.independent.co.uk/2023/02/23/14/ac29f067759e14f43f6f0b80ebef9755Y29udGVudHNlYXJjaGFwaSwxNjc3MjQ5NzA4-2.70855752.jpg"
+};
+var neuer = {
+firstName:"Manuel", 
+lastName:"Neuer", 
+position: "GOALKEEPER",
+club: "Bayern Munich",
+rating: "91",
+pic: "https://img.fcbayern.com/image/upload/t_cms-1x1-seo/v1668379175/cms/public/images/fcbayern-com/homepage/Saison-22-23/Profis/Nationalspieler/221113-neuer-deutschland-ima.jpg"
+};
+var terstegen = {
+firstName:"Marc Andre", 
+lastName:"Ter Stegen", 
+position: "GOALKEEPER",
+club: "Barcelona",
+rating: "91",
+pic: "https://cdn.vox-cdn.com/thumbor/sY8RS0PtJN5pHLaXtD4m50h9L_g=/0x0:4297x3003/1200x800/filters:focal(1806x1159:2492x1845)/cdn.vox-cdn.com/uploads/chorus_image/image/71862328/1456054569.0.jpg"
+};
+var degea = {
+firstName: "David", 
+lastName:"De Gea", 
+position: "GOALKEEPER",
+club: "Man United",
+rating: "89",
+pic: "https://metro.co.uk/wp-content/uploads/2023/02/GettyImages-1462721150.jpg?quality=90&strip=all"
+};
+var leno = {
+firstName: "Brend", 
+lastName:"Leno", 
+position: "GOALKEEPER",
+club: "Fulham",
+rating: "86",
+pic: "https://www.topmercato.com/wp-content/uploads/2021/04/Bernd-Leno-Arsenal.jpg"
+};
+var ramsdale = {
+firstName: "Aaron", 
+lastName:"Ramsdale", 
+position: "GOALKEEPER",
+club: "Arsenal",
+rating: "86",
+pic: "https://static.independent.co.uk/2021/11/16/09/94bfd7141daf53ce7217e1b94d5277f2Y29udGVudHNlYXJjaGFwaSwxNjM3MTMyNjI0-2-1.63758250?quality=75&width=982&height=726&auto=webp"
+};
+var varane = {
+firstName: "Raphael", 
+lastName:"Varane", 
+position: "DEFENSE",
+club: "Man United",
+rating: "88",
+pic: "https://ichef.bbci.co.uk/news/999/cpsprodpb/9a91/live/a736e6a0-22ed-11ed-9e13-997e65788ec4.jpg"
+};
+var shaw = {
+firstName: "Luke", 
+lastName:"Shaw", 
+position: "DEFENSE",
+club: "Man United",
+rating: "88",
+pic: "https://metro.co.uk/wp-content/uploads/2023/02/SEI_145616115-895b.jpg?quality=90&strip=all"
+};
+var rashford = {
+firstName: "Marcus", 
+lastName:"Rashford", 
+position: "ATTACK",
+club: "Man United",
+rating: "90",
+pic: "https://resources.premierleague.com/premierleague/photo/2023/02/19/978454a0-e18a-4fca-aeed-052509f2214c/1467623344.jpg"
+};
+var fred = {
+firstName: "Frederico", 
+lastName:"Fred", 
+position: "MIDFIELD",
+club: "Man United",
+rating: "86",
+pic: "https://i2-prod.manchestereveningnews.co.uk/incoming/article22682529.ece/ALTERNATES/s1200c/0_Fred.jpg"
+};
+var sancho = {
+firstName: "Jadon", 
+lastName:"Sancho", 
+position: "MIDFIELD",
+club: "Man United",
+rating: "87",
+pic: "https://e0.365dm.com/22/03/1600x900/skysports-jadon-sancho-manchester-united_5696552.jpg?20220306165830"
+};
+var fernandes = {
+firstName: "Bruno", 
+lastName:"Fernandes", 
+position: "MIDFIELD",
+club: "Man United",
+rating: "89",
+pic: "https://resources.premierleague.com/premierleague/photo/2022/12/20/f346c196-1ea0-44cf-b894-2d0c95cb5f62/Bruno-Fernandes-Man-Utd.jpg"
+};
+var antony = {
+firstName: "Matheus", 
+lastName:"Antony", 
+position: "MIDFIELD",
+club: "Man United",
+rating: "86",
+pic: "https://d2x51gyc4ptf2q.cloudfront.net/content/uploads/2023/01/12082058/Antony-Man-Utd-F365-4.jpg"
+};
+var perisic = {
+firstName: "Luke", 
+lastName:"Shaw", 
+position: "DEFENSE",
+club: "Man United",
+rating: "88",
+pic: "https://metro.co.uk/wp-content/uploads/2023/02/SEI_145616115-895b.jpg?quality=90&strip=all"
+};
+var tobi = {
+firstName: "Ehindero",
+lastName: "Tobi",
+position: "NIGERIA",
+club: "Fisher",
+rating: "90",
+pic: "https://media.tenor.com/j2nm-x4S08MAAAAM/african-kid-africa.gif"
+}
+var natti = {
+firstName: "Gulbet",
+lastName: "Nathanael",
+position: "ERITREA",
+club: "Fisher Legends",
+rating: "93",
+pic: "https://www.cpapracticeadvisor.com/wp-content/uploads/sites/2/2022/11/20221108-AMX-SPORTS-STEPH-CURRY-GOES-NUCLEAR-BUT-1-SJ.jpg"
+}
+var kai = {
+firstName: "Wynter",
+lastName: "Kai",
+position: "JAMAICA (50%)",
+club: "Fisher Lightskin",
+rating: "50",
+pic: "https://i.kym-cdn.com/photos/images/newsfeed/002/515/254/859"
+}
+var immanuel = {
+firstName: "Mwale",
+lastName: "Immanuel",
+position: "NIGERIA",
+club: "Try Hards",
+rating: "4.2",
+pic: "https://i.kym-cdn.com/entries/icons/mobile/000/034/065/terio.jpg"
+}
+
+var jesus = {
+firstName: "Gabriel", 
+lastName:"Jesus", 
+position: "ATTACK",
+club: "Arsenal",
+rating: "86",
+pic: "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt1ad8c4f3257cd1d1/63e3bf177744f0271c5ba405/GettyImages-1431489879.png"
+};
+var saka = {
+firstName: "Bukayo", 
+lastName:"Saka", 
+position: "ATTACK",
+club: "Arsenal",
+rating: "89",
+pic: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/saka-celeb-brighton.png?itok=fPzgIJrz"
+};
+var zinchenko = {
+firstName: "Oleksandr", 
+lastName:"Zinchenko", 
+position: "DEFENSE",
+club: "Arsenal",
+rating: "85",
+pic: "https://e0.365dm.com/22/07/768x432/skysports-olesandr-zinchenko_5836630.jpg?20220716191016"
+};
+var partey = {
+firstName: "Thomas", 
+lastName:"Partey", 
+position: "MIDFIELD",
+club: "Arsenal",
+rating: "85",
+pic: "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt531bd15401808484/63b5898968ce201ffcda035a/Partey.jpg"
+};
+var xhaka = {
+firstName: "Bukayo", 
+lastName:"Saka", 
+position: "ATTACK",
+club: "Arsenal",
+rating: "89",
+pic: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/saka-celeb-brighton.png?itok=fPzgIJrz"
+};
+var farboud = {
+  firstName: "Ettelaei",
+  lastName: "Farbord",
+  position: "Bed",
+  club: "Fisher Legends",
+  rating: "99",
+  pic: "https://i1.sndcdn.com/artworks-ywcx1pUzUGGvjwmH-BUNWRA-t500x500.jpg"
+}
+var mahrez = {
+firstName: "Riyad", 
+lastName:"Mahrez", 
+position: "ATTACK",
+club: "Man City",
+rating: "88",
+pic: "https://resources.premierleague.com/photos/2023/02/09/4cf7cf2b-cd82-4815-a05a-b79266ad5972/2023-01-19T215147Z_1758786783_UP1EJ1J1OQ9YP_RTRMADP_3_SOCCER-ENGLAND-MCI-TOT-REPORT.JPG?width=930&height=620"
+};
+var grealish = {
+firstName: "Jack", 
+lastName:"Grealish", 
+position: "ATTACK",
+club: "Man City",
+rating: "85",
+pic: "https://www.soccerbible.com/media/144469/grealish-top-min.jpg"
+};
+var walker = {
+firstName: "Kyle", 
+lastName:"Walker", 
+position: "DEFENSE",
+club: "Man City",
+rating: "86",
+pic: "https://images2.minutemediacdn.com/image/upload/c_crop,w_2348,h_1320,x_1735,y_176/c_fill,w_1440,ar_16:9,f_auto,q_auto,g_auto/images/GettyImages/mmsport/90min_en_international_web/01gepad6nprxx1kehzy4.jpg"
+};
+var gundogan = {
+firstName: "Ilkay", 
+lastName:"Gündogan", 
+position: "MIDFIELD",
+club: "Man City",
+rating: "86",
+pic: "https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg):focal(1207x489:1209x487)/origin-imgresizer.eurosport.com/2018/01/08/2241537-46729535-2560-1440.jpg"
+};
+
+var goldplayers = [messi, rodri, mbappe, benzema, haaland, modric, debruyne, lewandowski, vinicius, salah, mane, kane, farboud, farboud, farboud, farboud, farboud, immanuel, immanuel,  immanuel, bellingham, casemiro, yousef, yousef, yousef, hakimi, griezmann, neymar, ronaldo, kimmich, vandijk, son, dias, silva, kante, cancelo, marquinhos, kroos, immanuel, kai, natti, tobi, dejong, verrati, robertson, alisson, ederson, lloris, courtois, donnaruma, martinez, pickford, neuer, terstegen, degea, leno, ramsdale, varane, shaw, rashford, fred, sancho, fernandes, antony, perisic, jesus, saka, zinchenko, partey, xhaka, mahrez, grealish, walker, gundogan];
+
+var boost = 0;
+function buyGold(){
+if(playercount < 16 && coins >= 1500){
+playercount++;
+coins = coins - 1500;
+document.getElementById("currency").innerHTML = coins;
+document.getElementById("internalcurrency").innerHTML = coins;
+var newplayer = goldplayers[Math.floor(Math.random()*goldplayers.length)];
+console.log(goldplayers.indexOf(newplayer));
+myteam.push(newplayer);
+texts.push(newplayer.lastName);
+arrange(newplayer.lastName);
+alert(newplayer.position + " [ENTER]");
+alert(newplayer.club + " [ENTER]");
+alert(Number(newplayer.rating) + boost + " [ENTER]");
+alert(newplayer.firstName + " " + newplayer.lastName + " [ENTER]");
+var container = document.createElement("div");
+noplayers++;
+if(noplayers === 1){
+document.querySelector(".inner .unnecessity").style.display = "none";
+document.querySelector(".achievement h2").innerHTML = "You can buy people now";
+achievement();
+}
+if(noplayers === 10){
+document.querySelector(".achievement h2").innerHTML = "10 of them already";
+achievement();
+}
+container.className = "player " + "number" + noplayers;
+var content = document.createElement("div");
+content.className = "content";
+var name = document.createElement("div");
+name.className = "name";
+var rating = document.createElement("div");
+rating.className = "rating";
+var h3 = document.createElement("h3");
+h3.innerHTML = newplayer.firstName;
+var h2 = document.createElement("h2");
+h2.innerHTML = newplayer.lastName;
+var button = document.createElement("button");
+button.innerHTML = "SELL";
+button.onclick = function() {sellplayer(this)};
+var h1 = document.createElement("h1");
+h1.innerHTML = Number(newplayer.rating) + boost;
+if(boost >= 1){
+h3.style.color = "lime";
+h1.style.color = "lime";
+h2.style.color = "lime"
+}
+var position = document.createElement("button");
+position.innerHTML = newplayer.position;
+rating.appendChild(h1);
+rating.appendChild(position);
+name.appendChild(h3);
+name.appendChild(h2);
+name.appendChild(button);
+content.appendChild(name);
+content.appendChild(rating);
+container.appendChild(content);
+container.style.backgroundImage = "url('" + newplayer.pic + "')";
+var ratingtotal;
+document.getElementById("innerity").appendChild(container);
+players.appendChild(container);
+var newinner = document.createElement("div");
+newinner.className = "playerinner " + "number" + noplayers;
+var newtitle = document.createElement("h1");
+newtitle.innerHTML = newplayer.lastName;
+var newrating = document.createElement("h1");
+newrating.innerHTML = Number(newplayer.rating) + boost;
+var newdelete = document.createElement("button");
+newdelete.innerHTML = "x";
+newdelete.onclick = function(){
+this.parentElement.style.display = "none";
+if(document.querySelector(".players-list .inner .unnecessity").style.diplay = "none"){
+  document.querySelector(".players-list .inner .unnecissity").style.diplay = "block";
+  document.querySelector(".players-list .inner .unnecissity").style.position = "absolute";
+  document.querySelector(".players-list .inner .unnecissity").style.zIndex = "0.9";
+}
+}
+newinner.appendChild(newtitle);
+newinner.appendChild(newrating);
+newinner.appendChild(newdelete);
+document.getElementById("innerity").appendChild(newinner);
+
+for(let i = 0; i < myteam.length; i++){
+ratingtotal = myteam[i].rating + ratingtotal;
+teamaverage = ratingtotal / myteam.length;
+document.getElementById("averagedata").innerHTML = teamaverage;
+}
+} else if(playercount >= 16){
+alert("You have reached the squad limit of 16!")
+} else{
+alert("Not enough coins!");
+}
+}
+
+var rudiger = {
+firstName:"Antonio", 
+lastName:"Rudiger", 
+position: "DEFENSE",
+club: "Bayern Munich",
+rating: "84",
+pic: "https://therealchamps.com/wp-content/uploads/getty-images/2017/07/1243232637.jpeg"
+};
+var arnold = {
+firstName:"Trent", 
+lastName:"A-Arnold", 
+position: "DEFENSE",
+club: "Liverpool",
+rating: "84",
+pic: "https://e0.365dm.com/22/12/2048x1152/skysports-alexander-arnold_6010026.jpg"
+};
+var martinez = {
+firstName:"Lautaro", 
+lastName:"Martinez", 
+position: "ATTACK",
+club: "Inter Milan",
+rating: "83",
+pic: "https://images2.minutemediacdn.com/image/fetch/w_2000,h_2000,c_fit/https%3A%2F%2Fpaininthearsenal.com%2Fwp-content%2Fuploads%2Fgetty-images%2F2017%2F07%2F1326873349.jpeg"
+};
+var coman = {
+firstName: "Kingsley",
+lastName: "Coman",
+position: "ATTACK",
+rating: 83,
+pic: "https://cdn.vox-cdn.com/thumbor/ckzJAFCAeMYosIcRnm_GwNtcAkQ=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/24177045/1244578602.jpg"
+};
+var dybala = {
+firstName: "Paulo",
+lastName: "Dybala",
+position: "ATTACK",
+rating: 82,
+pic: "https://media.cnn.com/api/v1/images/stellar/prod/200608205827-dybala-celebration.jpg?q=w_3000,h_2107,x_0,y_0,c_fill"
+};
+var lukaku = {
+firstName: "Romelu",
+lastName: "Lukaku",
+position: "ATTACK",
+rating: 84,
+pic: "https://www.amny.com/wp-content/uploads/2022/12/AP22335586583998-1200x800.jpg"
+};
+var ibrahimovic = {
+firstName: "Zlatan",
+lastName: "Ibrahimovic",
+position: "ATTACK",
+rating: 84,
+pic: "https://imageio.forbes.com/specials-images/imageserve/6216540c4655223f87dcafbb/0x0.jpg?format=jpg&width=1200"
+};
+var immobile = {
+firstName: "Ciro",
+lastName: "Immobile",
+position: "ATTACK",
+rating: 83,
+pic: "https://icdn.thelaziali.com/wp-content/uploads/2021/09/1006284801.jpg"
+};
+var thiago = {
+firstName: "Thiago",
+lastName: "Alcantara",
+position: "MIDFIELD",
+rating: 84,
+pic: "https://backend.liverpoolfc.com/sites/default/files/styles/xl/public/acquiadam/2022-05/thiago-alcantara-04052022.webp?itok=mjHefb5H"
+};
+var pedri = {
+firstName: "Gonçales",
+lastName: "Pedri",
+position: "MIDFIELD",
+rating: 82,
+pic: "https://www.coachesvoice.com/wp-content/uploads/2021/10/PedriMobile-1.jpg"
+};
+var phoden = {
+firstName: "Phil",
+lastName: "Foden",
+position: "MIDFIELD",
+rating: 82,
+pic: "https://i2-prod.manchestereveningnews.co.uk/sport/football/article26233477.ece/ALTERNATES/s1200c/0_GettyImages-1465579878.jpg"
+};
+var theoHernandez = {
+firstName: "Theo",
+lastName: "Hernandez",
+position: "DEFENSE",
+rating: 80,
+pic: "https://images.beinsports.com/x6vY6OoX84SScQ6_k05nnX5l1nw=/1300x731/smart/theo-hernandez_57vjty26vaj610ums7y3r1y6r.jpg"
+};
+var diegoJota = {
+firstName: "Diogo",
+lastName: "Jota",
+position: "ATTACK",
+rating: 83,
+pic: "https://www.planetsport.com/image-library/partners/rival/square/1200/l/liverpool-to-make-late-call-on-diogo-jota-ahead-of-palace-cl-42eb78-sc.jpg"
+};
+var henderson = {
+firstName: "Jordan",
+lastName: "Henderson",
+position: "MIDFIELD",
+rating: 81,
+pic: "https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0002/34/thumb_133372_default_news_size_5.png"
+};
+var nunez = {
+firstName: "Darwin",
+lastName: "Nuñez",
+position: "ATTACK",
+rating: 84,
+pic: "https://thetopflight.com/wp-content/uploads/getty-images/2017/07/1410139536.jpeg"
+};
+var trossard = {
+firstName: "Leandro",
+lastName: "Trossard",
+position: "ATTACK",
+rating: 80,
+pic: "https://i.guim.co.uk/img/media/9379df534494ff03d868f2e126cdb735c6a7a5ce/324_336_3518_2110/master/3518.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=39dde616f5eacbdf3daee828a29b7622"
+};
+var sorloth = {
+firstName: "Alexander",
+lastName: "Sörloth",
+position: "ATTACK",
+rating: 78,
+pic: "https://idsb.tmgrup.com.tr/ly/uploads/images/2020/07/06/44683.jpg"
+};
+var deLigt = {
+firstName: "Matthijs",
+lastName: "de Ligt",
+position: "DEFENSE",
+rating: 84,
+pic: "https://icdn.juvefc.com/wp-content/uploads/2019/08/GettyImages-1156985198.jpg"
+};
+var valverde = {
+firstName: "Federico",
+lastName: "Valverde",
+position: "MIDFIELD",
+rating: 82,
+pic: "https://playingfor90.com/wp-content/uploads/getty-images/2018/08/1244160315.jpeg"
+};
+var mctominay = {
+firstName: "Scott",
+lastName: "McTominay",
+position: "MIDFIELD",
+rating: 83,
+pic: "https://www.planetsport.com/image-library/partners/rival/square/1200/s/scott-mctominay-had-a-good-season-for-his-club-side-2582695-db4a27-sc.jpg"
+};
+var moura = {
+firstName: "Lucas",
+lastName: "Moura",
+position: "MIDFIELD",
+rating: 80,
+pic: "https://www.thesun.co.uk/wp-content/uploads/2022/12/lucas-moura-tottenham-hotspur-uefa-785301164.jpg?strip=all&quality=100&w=1920&h=1440&crop=1"
+};
+var martinelli = {
+firstName: "Gabriel",
+lastName: "Martinelli",
+position: "ATTACK",
+rating: 84,
+pic: "https://resources.premierleague.com/premierleague/photo/2022/08/09/8b39249d-a387-422b-a96d-371e64c2141a/Gabriel-Martinelli-Arsenal.png"
+};
+var xhaka = {
+firstName: "Granit",
+lastName: "Xhaka",
+position: "MIDFIELD",
+rating: 84,
+pic: "https://resources.premierleague.com/photos/2022/08/24/925c2b44-c647-4a57-84a2-a895875b8fed/Granit-Xhaka-Arsenal.jpg?width=930&height=620"
+};
+var odegaard = {
+firstName: "Martin",
+lastName: "Odegaard",
+position: "MIDFIELD",
+rating: 84,
+pic: "https://d2x51gyc4ptf2q.cloudfront.net/content/uploads/2023/01/29083952/Arsenal-midfielder-Martin-Odegaard.jpg"
+};
+var phillips = {
+firstName: "Kalvin",
+lastName: "Phillips",
+position: "MIDFIELD",
+rating: 81,
+pic: "https://media.cnn.com/api/v1/images/stellar/prod/221223213022-kalvin-phillips-221204-restricted.jpg?c=original"
+};
+var stones = {
+firstName: "John",
+lastName: "Stones",
+position: "DEFENSE",
+rating: 82,
+pic: "https://resources.premierleague.com/photos/2023/01/11/ac21d2f3-25ff-4fa2-86a7-1899aef0197c/Stones-Man-City.jpg?width=930&height=620"
+};
+var ake = {
+firstName: "Nathan",
+lastName: "Aké",
+position: "DEFENSE",
+rating: 80,
+pic: "https://www.mancity.com/meta/media/3vjhpo5n/tf702860.png?width=1620"
+};
+var alvarez = {
+firstName: "Julian",
+lastName: "Alvarez",
+position: "ATTACK",
+rating: 83,
+pic: "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt82d4e9d1e6598054/63bb04badba6834785376f1f/JULI.png"
+};
+
+var silverPlayers = [rudiger, arnold, martinez, coman, dybala, lukaku, ibrahimovic, immobile, thiago, pedri, phoden, theoHernandez, diegoJota, henderson, nunez, trossard, sorloth, deLigt, valverde, mctominay, moura, martinelli, xhaka, odegaard, phillips, stones, ake, alvarez];
+
+function buySilver(){
+if(playercount < 16 && coins >= 1000){
+playercount++;
+coins = coins - 1000;
+document.getElementById("currency").innerHTML = coins;
+document.getElementById("internalcurrency").innerHTML = coins;
+var newplayer = silverPlayers[Math.floor(Math.random()*silverPlayers.length)];
+console.log(silverPlayers.indexOf(newplayer));
+texts.push(newplayer.lastName);
+arrange(newplayer.lastName);
+alert(newplayer.position + " [ENTER]");
+alert(newplayer.rating + " [ENTER]");
+alert(newplayer.firstName + " " + newplayer.lastName + " [ENTER]");
+var container = document.createElement("div");
+container.className = "player";
+var content = document.createElement("div");
+content.className = "content";
+var name = document.createElement("div");
+name.className = "name";
+var rating = document.createElement("div");
+rating.className = "rating";
+var h3 = document.createElement("h3");
+h3.innerHTML = newplayer.firstName;
+var h2 = document.createElement("h2");
+h2.innerHTML = newplayer.lastName;
+var button = document.createElement("button");
+button.innerHTML = "SELL";
+button.onclick = function() {
+var confirmation = confirm("Are you sure you want to sell this player?" + " [ENTER]");
+if(confirmation){
+  sold++;
+  playercount--;
+  if(sold === 1){
+    document.querySelector(".achievement h2").innerHTML = "Charge it";
+    achievement();
+  }
+  var buttonparent = button.parentElement;
+  var ultimateparent = buttonparent.parentElement;
+  var lastparent = ultimateparent.parentElement;
+  //document.querySelector(lastparent.className)
+  var theclass = lastparent.className;
+  theclass = theclass.toString();
+  var xy = ultimateparent.children[1].innerHTML;
+  lastparent.style.display = "none";
+  coins = coins + 500;
+  document.getElementById("currency").innerHTML = coins;
+  document.getElementById("internalcurrency").innerHTML = coins;
+  alert("500 Coins recieved!");
+  const thatindex = texts.indexOf(xy);
+  if (thatindex > -1) { // only splice array when item is found
+    array.splice(index, 1); // 2nd parameter means remove one item only
+  }
+  //arrange();
+
+  var children = document.getElementById("container").children;
+  for (var i = 0; i < children.length; i++) {
+    var tableChild = children[i];
+    if(tableChild.innerHTML === buttonparent.children[1].innerHTML){
+      tableChild.style.display = "none";
+    }
+  }
+
+  var thing = theclass.split(' ')[1];
+  console.log(thing);
+  var elems = document.querySelector(".playerinner." + thing);
+  var index = 0, length = elems.length;
+  for ( ; index < length; index++) {
+    elems[index].style.display = "none";
+  }
+  var ratingtotal;
+  for(let i = 0; i < myteam.length; i++){
+    ratingtotal = myteam[i].rating + ratingtotal;
+    teamaverage = ratingtotal / myteam.length;
+    document.getElementById("averagedata").innerHTML = teamaverage;
+  }
+}
+};
+var h1 = document.createElement("h1");
+h1.innerHTML = Number(newplayer.rating) + boost;
+if(boost >= 1){
+h3.style.color = "lime";
+h1.style.color = "lime";
+h2.style.color = "lime"
+}
+var position = document.createElement("button");
+position.innerHTML = newplayer.position;
+rating.appendChild(h1);
+rating.appendChild(position);
+name.appendChild(h3);
+name.appendChild(h2);
+name.appendChild(button);
+content.appendChild(name);
+content.appendChild(rating);
+container.appendChild(content);
+container.style.backgroundImage = "url('" + newplayer.pic + "')";
+players.appendChild(container);	
+var ratingtotal;
+noplayers++;
+players.appendChild(container);
+for(let i = 0; i < myteam.length; i++){
+ratingtotal = myteam[i].rating + ratingtotal;
+teamaverage = ratingtotal / myteam.length;
+document.getElementById("averagedata").innerHTML = teamaverage;
+}
+} else if(playercount >= 16){
+alert("Squad limit of 16 reached!")
+} else{
+alert("Not enough coins!");
+}
+}
+
+var tester_account = {
+username: "testerAccount",
+password: "testerAccount",
+message: "Welcome to Baller XI. I believe Jalal gave you a link to follow. The game consists of the following:\n- Click the football or press the spacebar to earn coins\n- Coins can be used to buy players using scouts in the teamsheet\n- There are 2 kinds of scouts: gold & silver.\n- Gold players are generally higher rated than silver players\n- Your goal is to build up your team using coins and scouts\n- You can sell players for 500 coins\n- You might get double players in which case you should sell the other\n- As this is a tester account, your progress will not be saved \n- Scouts choose a player at random\n- You will start the game with 15000 coins as a gift so you can experiment with the features\n- Have fun and give me an honest review!\nThat's it! Press 'close' to continue."
+}
+
+
+function login(){
+var usernameinput = document.getElementById("usernameinput").value;
+var passwordinput = document.getElementById("passwordinput").value;
+if(usernameinput === tester_account.username && passwordinput === tester_account.password){
+alert(tester_account.message);
+document.querySelector(".ultimate_login").style.top = "-100%"
+} else{
+alert("Password or username incorrect.");
+}
+}
+
+
+var ferguson = {
+png: "https://www.footyrenders.com/render/alex-ferguson.png",
+name: "Sir Alex Ferguson",
+boost: 5,
+teams: "Manchester United",
+description : "Premier League x 13; FA Cup x 5; Champions League x 2",
+beast: "Cristiano Ronaldo"
+}
+var guardiola = {
+png: "https://static.wixstatic.com/media/f8d893_b4a7c074515d442bb527be5424c61889~mv2.png/v1/fill/w_1000,h_1000,al_c,q_90,usm_0.66_1.00_0.01/f8d893_b4a7c074515d442bb527be5424c61889~mv2.png",
+name: "Pep Guardiola",
+boost: 5,
+teams: "Manchester City; Barcelona",
+description : "Champions League x 2; Premier League x 5; FA Cup x 1; LaLiga x 3; MORE",
+beast: "Lionel Messi; Erling Haaland"
+}
+var ian = {
+png: "https://cdn.shopify.com/s/files/1/0466/9292/5593/products/00010135p_800x.png?v=1625796163",
+name: "Ian Quinonez-Paz",
+boost: -3,
+teams: "Campion",
+description: "Mexican Yute of the Year x 4; Campion Bad Yute of the Year x 2",
+beast: "Pablo Escobar; El Chapo"
+}
+var zidane = {
+png: "https://www.pngmart.com/files/22/Zinedine-Zidane-PNG-Picture.png",
+name: "Zinedine Zidane",
+boost: 4,
+teams: "Real Madrid",
+description : "Champions League x 3; LaLiga x 1",
+beast: "Cristiano Ronaldo"
+}
+var ancelotti = {
+png: "https://www.footyrenders.com/render/carlo-ancelotti-3.png",
+name: "Carlo Ancelloti",
+boost: 4,
+teams: "Real Madrid",
+description : "Champions League x 4; LaLiga x 1; Premier League x 1",
+beast: "Karim Benzema"
+}
+var klopp = {
+png: "https://resources.premierleague.com/premierleague/photos/players/250x250/man279.png",
+name: "Jurgen Klopp",
+boost: 3,
+teams: "Liverpool",
+description: "Premier League x 1; UEFA Champions League x 1",
+beast: "Mohamed Salah"
+};
+var mourinho = {
+png: "https://www.footyrenders.com/render/jose-mourinho-8.png",
+name: "Jose Mourinho",
+boost: 3,
+teams: "Tottenham Hotspur",
+description: "UEFA Champions League x 2; Premier League x 3; Serie A x 2",
+beast: "Didier Drogba"
+};
+var solskjaer = {
+png: "https://www.footyrenders.com/render/ole-gunnar-solskjaer-4.png",
+name: "Ole Gunnar Solskjaer",
+boost: 2,
+teams: "Manchester United",
+description: "Premier League x 6; UEFA Champions League x 2",
+beast: "Cristiano Ronaldo"
+};
+var lampard = {
+png: "https://resources.premierleague.com/premierleague/photos/players/250x250/man50167.png",
+name: "Frank Lampard",
+boost: 3,
+teams: "Chelsea",
+description: "Premier League x 3; UEFA Champions League x 1",
+beast: "Eden Hazard"
+};
+var arteta = {
+png: "https://www.footyrenders.com/render/mikel-arteta-9.png",
+name: "Mikel Arteta",
+boost: 3,
+teams: "Arsenal",
+description: "FA Cup x 2",
+beast: "Pierre-Emerick Aubameyang; Bukayo Saka"
+};
+var rodgers = {
+png: "https://resources.premierleague.com/premierleague/photos/players/250x250/man38197.png",
+name: "Brendan Rodgers",
+boost: 2,
+teams: "Leicester City",
+description: "Scottish Premier League x 3",
+beast: "Jamie Vardy"
+};
+var hasenhuttl = {
+png: "https://resources.premierleague.com/premierleague/photos/players/250x250/man560.png",
+name: "Ralph Hasenhuttl",
+boost: 1,
+teams: "Southampton",
+description: "No titles won.",
+beast: "Danny Ings"
+};
+var bielsa = {
+png: "https://resources.premierleague.com/premierleague/photos/players/250x250/man26.png",
+name: "Marcelo Bielsa",
+boost: 2,
+teams: "Leeds United",
+description: "No titles won.",
+beast: "Kalvin Phillips"
+};
+var galtier = {
+png: "https://sortitoutsi.net/uploads/extractedfiles/Pr2AURsa61QSvOhL9NGQQCehrwluSutX/Lille%20OSC/9574.png",
+name: "Christophe Galtier",
+boost: -1,
+teams: "PSG",
+description: "Ligue 1 x 1",
+beast: "Burak Yilmaz"
+};
+var simeone = {
+png: "https://assets.laliga.com/squad/2022/t175/man37905/2048x2225/man37905_t175_2022_1_001_000.png",
+name: "Diego Simeone",
+boost: 3,
+teams: "Atletico Madrid",
+description: "LaLiga x 2; UEFA Europa League x 2",
+beast: "Luis Suarez"
+};
+var koeman = {
+png: "https://www.footyrenders.com/render/ronald-koeman-3.png",
+name: "Ronald Koeman",
+boost: 2,
+teams: "Barcelona",
+description: "LaLiga x 4; UEFA Champions League x 1",
+beast: "Lionel Messi"
+};
+var emery = {
+png: "https://resources.premierleague.com/premierleague/photos/players/250x250/man37569.png",
+name: "Unai Emery",
+boost: 3,
+teams: "Villarreal",
+description: "UEFA Europa League x 3",
+beast: "Gerard Moreno"
+};
+var marcelino = {
+png: "https://sortitoutsi.net/uploads/media/4IretlPtl9phPHao8jUNdcogcMaCPQ66LIvsvz1p.png",
+name: "Marcelino García Toral",
+boost: 2,
+teams: "Athletic Bilbao",
+description: "Copa del Rey x 1; UEFA Europa League x 1",
+beast: "Inaki Williams"
+};
+var mendilibar = {
+png: "https://sortitoutsidospaces.b-cdn.net/images/HRUfXDCy5JxFwNm75SvX8LdaYKHSuogJ.png",
+name: "Jose Luis Mendilibar",
+boost: 1,
+teams: "Eibar",
+description: "No titles won.",
+beast: "Kike Garcia"
+};
+
+var coaches = [ferguson, guardiola, ancelotti, zidane, klopp, mourinho, solskjaer, ian, ian, lampard, arteta, rodgers, hasenhuttl, bielsa, galtier, simeone, koeman, emery, marcelino, mendilibar];
+
+function buyCoach(){
+if(coins >= 5000){
+coins = coins - 5000;
+document.getElementById("currency").innerHTML = coins;
+document.getElementById("internalcurrency").innerHTML = coins;
+var newcoach = coaches[Math.floor(Math.random() * coaches.length)];
+alert("Mainly Coached " + newcoach.teams);
+alert("Coached " + newcoach.beast);
+alert(newcoach.description);
+alert(newcoach.name);
+document.querySelector(".manscout img").src = newcoach.png;
+document.getElementById("coachname").innerHTML = newcoach.name;
+document.getElementById("description").innerHTML = newcoach.description + "<br>Beast: " + newcoach.beast;
+document.querySelector(".boostno").innerHTML = newcoach.boost;
+boost = newcoach.boost;
+
+} else{
+alert("Not enough coins!");
+}
+}
+  </script>
+</body>
+</html>
