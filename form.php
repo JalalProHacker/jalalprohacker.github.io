@@ -1,7 +1,4 @@
 <html>
-  <head>
-    
-  </head>
   <body>
     <h1>Form.php using post method</h1>
     <h2>Username entered: <?php echo $_POST["username"];?></h2>
